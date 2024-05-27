@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dycc51ynrd12u"]
+
+[ext_resource type="Texture2D" uid="uid://b7eo2a7wcdqd3" path="res://assets/Ship_01/Ship_LVL_1.png" id="1_1tkvv"]
+[ext_resource type="Script" path="res://scripts/blue_player_ship.gd" id="1_v87rw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cjwte"]
+height = 60.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vicgi"]
+radius = 12.0208
+height = 55.1543
+
+[node name="BluePlayerShip" type="CharacterBody2D"]
+script = ExtResource("1_v87rw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("1_1tkvv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_cjwte")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-16, 8)
+rotation = 0.785398
+shape = SubResource("CapsuleShape2D_vicgi")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(14, 6)
+rotation = -0.785398
+shape = SubResource("CapsuleShape2D_vicgi")
